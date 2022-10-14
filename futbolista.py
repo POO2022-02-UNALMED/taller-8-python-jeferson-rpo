@@ -9,7 +9,7 @@ class Futbolista(Persona,Deportista):
         self._golesMarcados= golesMarcados
         self._tarjetasRojas= tarjetasRojas
         self._piernaHabil= piernaHabil
-        self._listaFutbolista.append(self)
+        
     def __str__(self):
         return "Mi nombre es ", Persona._nombre, " soy profesional en el deporte ", Deportista._deporte," Tengo ", Persona._edad," anos de edad y llevo ",Deportista._anosPracticando," años en el deporte”"
 

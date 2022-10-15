@@ -11,4 +11,4 @@ class Futbolista(Persona,Deportista):
         self.piernaHabil= piernaHabil
         
     def __str__(self):
-        return "Mi nombre es ", Persona.getNombre(self), " soy profesional en el deporte ", Deportista.getDeporte(self)," Tengo ", Persona.getEdad(self)," anos de edad y llevo ",Deportista.getAnosPracticando(self)," años en el deporte”"  
+        return "Mi nombre es ", Persona.getNombre(self), " soy profesional en el deporte ", Deportista.getDeporte(self)," Tengo ", Persona.getEdad(self)," anos de edad y llevo ",Deportista.getAñosPracticando(self)," años en el deporte”"  

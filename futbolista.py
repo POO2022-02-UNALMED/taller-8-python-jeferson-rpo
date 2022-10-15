@@ -17,7 +17,7 @@ class Futbolista(Persona,Deportista):
     def setTarjetasRojas(self,tarjetasRojas):
         self.tarjetasRojas = tarjetasRojas
     def getTarjetasRojas(self):
-        return self.tarjetaRojas
+        return self.tarjetasRojas
     def setPiernaHabil(self,piernaHabil):
         self.piernaHabil = piernaHabil
     def getPiernaHabil(self):

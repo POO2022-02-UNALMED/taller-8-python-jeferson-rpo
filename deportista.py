@@ -1,15 +1,14 @@
-class Deportista:
-    
-    def __init__(self,anosPracticando):
-        self.deporte="Futbol"
-        self.añosPracticando= anosPracticando
-    
-    def setDeporte(self,deporte):
-        self.deporte = deporte
+from persona import Persona
+class Deportista(Persona):
+    def __init__(self, nombre , edad , altura, sexo, deporte, añosPracticando):
+        super().__init__(nombre, edad, altura, sexo)
+        self._deporte = deporte
+        self._añosPracticando = añosPracticando
     def getDeporte(self):
-        return self.deporte
-    
-    def setAñosPracticando(self,añosPracticando):
-        self.deporte = añosPracticando
+        return self._deporte
     def getAñosPracticando(self):
-        return self.añosPracticando    
+        return self._añosPracticando
+    def setDeporte(self, deporte):
+        self._deporte = deporte
+    def serAñosPracticando(self, años):
+        self._añosPracticando = años

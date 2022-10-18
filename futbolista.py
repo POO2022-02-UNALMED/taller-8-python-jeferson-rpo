@@ -1,31 +1,37 @@
-from persona import Persona
 from deportista import Deportista
-
-class Futbolista(Persona,Deportista):
-    listaFutbolistas=[]
-    def __init__(self,nombre,edad,altura,sexo,anosPracticando,golesMarcados,tarjetasRojas,piernaHabil,):
-        Persona.__init__(self,nombre,edad,altura, sexo)
-        Deportista.__init__(self,anosPracticando)
-        self.golesMarcados= golesMarcados
-        self.tarjetasRojas= tarjetasRojas
-        self.piernaHabil= piernaHabil
+class Futbolista(Deportista):
+    _listaFutbolistas = []
+    def __init__(self, nombre, edad, altura, sexo,  añosPracticando, golesMarcados, tarjetasRojas, piernaHabil):
+        super().__init__(nombre,edad,altura,sexo,"Futbol",añosPracticando)
+        self._golesMarcados = golesMarcados
+        self._tarjetasRojas = tarjetasRojas
+        self._piernaHabil = piernaHabil
+        Futbolista._listaFutbolistas.append(self)
     
-    def setGolesMarcados(self,golesMarcados):
-        self.golesMarcados = golesMarcados
+    @classmethod
+    def getListaFutbolistas(cls):
+        cls._listaFutbolistas 
+    @classmethod
+    def setListaFutbolistas(cls,nuevo):
+        cls._listaFutbolistas=nuevo
+
     def getGolesMarcados(self):
-        return self.golesMarcados
-    def setTarjetasRojas(self,tarjetasRojas):
-        self.tarjetasRojas = tarjetasRojas
+        return self._golesMarcados
+    
     def getTarjetasRojas(self):
-        return self.tarjetasRojas
-    def setPiernaHabil(self,piernaHabil):
-        self.piernaHabil = piernaHabil
+        return self._tarjetasRojas
+    
     def getPiernaHabil(self):
-        return self.piernaHabil
+        return self._piernaHabil
 
+    def setGolesMarcados(self,nuevo):
+        self._golesMarcados=nuevo
+
+    def setTarjetasRojas(self,nuevo):
+        self._tarjetasRojas=nuevo
+    
+    def setPiernaHabil(self,nuevo):
+        self._piernaHabil=nuevo
+    
     def __str__(self):
-       def __str__(self):
-        return f"Mi nombre es {Persona.getNombre(self)} soy profesional en el deporte {Deportista.getDeporte(self)} Tengo {Persona.getEdad(self)} años de edad y llevo {Deportista.getAñosPracticando(self)} años en el deporte"
-
-futbolista1 = Futbolista("Juan Pablo", 30, "1,80", "M", 12, 400, 1, "Derecha")
-futbolista1.__str__()
+        return "Mi nombre es {} soy profesional en el deporte {} Tengo {} años de edad y llevo {} años en el deporte".format(self.getNombre(), self.getDeporte(), str(self.getEdad()), str(self.getAñosPracticando()))
